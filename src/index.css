@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.resize-handle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #fff;
+  border: 1px solid #3b82f6;
+  border-radius: 50%;
+}
+
+.resize-handle.top { top: -4px; left: 50%; transform: translateX(-50%); cursor: n-resize; }
+.resize-handle.right { right: -4px; top: 50%; transform: translateY(-50%); cursor: e-resize; }
+.resize-handle.bottom { bottom: -4px; left: 50%; transform: translateX(-50%); cursor: s-resize; }
+.resize-handle.left { left: -4px; top: 50%; transform: translateY(-50%); cursor: w-resize; }
+.resize-handle.top-right { top: -4px; right: -4px; cursor: ne-resize; }
+.resize-handle.bottom-right { bottom: -4px; right: -4px; cursor: se-resize; }
+.resize-handle.bottom-left { bottom: -4px; left: -4px; cursor: sw-resize; }
+.resize-handle.top-left { top: -4px; left: -4px; cursor: nw-resize; }
+
+.drag-handle {
+  cursor: grab;
+}
+
+.drag-handle:active {
+  cursor: grabbing;
+}
+
+.canvas-container .react-draggable-dragging {
+  cursor: grabbing !important;
+}
+
+.canvas-container img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
